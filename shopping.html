@@ -1,231 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shop | ConsumerNation</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-	
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/price-range.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
-	<script scr="js/cart.js"></script>
-	<script src="js/canvasjs.min"></script>
-    <script src="js/carbongraph.js"></script>
-
-</head>
-<body>
-
-<section>
-
-    <header id="header"><!--header-->
-        <div class="header-middle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
+   <head>
+      <meta charset="UTF-8">
+      <title>Shop | ConsumerNation</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/font-awesome.min.css" rel="stylesheet">
+      <link href="css/prettyPhoto.css" rel="stylesheet">
+      <link href="price-range.css" rel="stylesheet">
+      <link href="css/animate.css" rel="stylesheet">
+      <link href="css/main.css" rel="stylesheet">
+      <link href="css/responsive.css" rel="stylesheet">
+      <script src="js/jquery.js"></script>
+      <script src="js/jquery-1.8.2.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.scrollUp.min.js"></script>
+      <script src="js/require.js"></script>
+      <script src="js/jquery.popupoverlay.js"></script>
+      <script src="js/price-range.js"></script>
+      <script src="js/jquery.prettyPhoto.js"></script>
+      <script src="js/main.js"></script>
+      <script scr="js/cart.js"></script>
+      <script src="js/canvasjs.min.js"></script>
+      <script src="js/carbongraph.js"></script>
+      <script src="js/index.js"></script>
+   </head>
+   <body>
+      <section>
+         <header id="header">
+            <!--header-->
+            <div class="header-middle">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                           <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
                         </div>
-                    </div>
-                    <div class="col-sm-8">
-						<!---Shopping cart--->
+                     </div>
+                     <div class="col-sm-8">
+                        <!---Shopping cart--->
                         <div class="shop-menu pull-right">
-                            <ul class="nav navbar-nav">
-								<li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Shopping List <span class="badge">3</span></a></li>
-                            </ul>
+                           <ul class="nav navbar-nav">
+                              <li><a href="#" id="cart" class="cart_open"><i class="fa fa-shopping-cart"></i> Shopping List <span class="badge">3</span></a></li>
+                           </ul>
                         </div>
-						<!---Search bar that doesn't work--->
+                        <div id="shopping_list" class="popups shopping_list">
+                           <b>example shopping list</b>
+                           <button class="shopping_list_close">Close</button>
+                        </div>
+                        <!---Search bar that doesn't work--->
                         <div class="search_box pull-right">
-                            <input type="text" placeholder="Search"/>
+                           <input type="text" placeholder="Search"/>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-
-    </header>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="left-sidebar">
-                    <h2>Filters</h2>
-                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+         </header>
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-3">
+                  <div class="left-sidebar">
+                     <h2>Filters</h2>
+                     <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
                         <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                        Category
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="sportswear" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <ul>
-                                        <li><a href="#">Clothing </a></li>
-                                        <li><a href="#">Shoes </a></li>
-                                        <li><a href="#">Accessories </a></li>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Electronics </a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                           <div class="panel-heading">
+                              <h4 class="panel-title">
+                                 <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                 <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                 Category
+                                 </a>
+                              </h4>
+                           </div>
+                           <div id="sportswear" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                 <ul>
+                                    <li><a href="#">Clothing </a></li>
+                                    <li><a href="#">Shoes </a></li>
+                                    <li><a href="#">Accessories </a></li>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Electronics </a></li>
+                                 </ul>
+                              </div>
+                           </div>
                         </div>
-                    </div><!--/category-products-->
-
-                    <div class="price-range"><!--price-range-->
+                     </div>
+                     <!--/category-products-->
+                     <div class="price-range">
+                        <!--price-range-->
                         <h2> Price Range </h2>
                         <div class="well text-center">
-                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                            <b class="pull-left">$ 0</b> <b class="pull-right">$ 100</b>
+                           <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+                           <b class="pull-left">$ 0</b> <b class="pull-right">$ 100</b>
                         </div>
-                    </div><!--/price-range-->
-
-                    <div class="price-range"><!--price-range-->
+                     </div>
+                     <!--/price-range-->
+                     <div class="price-range">
+                        <!--price-range-->
                         <h2> Distance </h2>
                         <div class="well text-center">
-                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[5]" id="sl2" ><br />
-                            <b class="pull-left">0mi</b> <b class="pull-right"> 30mi</b>
+                           <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[5]" id="sl2" ><br />
+                           <b class="pull-left">0mi</b> <b class="pull-right"> 30mi</b>
                         </div>
-                    </div><!--/price-range-->
-					
-					<div class="carbon-graph"><!--carbon graph--->
-						<h2>Carbon Graph</h2>
-						<div class="well text-center">
-							<div id="chartContainer" style="height: 400px; width: 100%;"></div>
-						</div>
-					</div>
-					
-
-                </div>
+                     </div>
+                     <!--/price-range-->
+                     <div class="carbon-graph">
+                        <!--carbon graph--->
+                        <h2>Carbon Graph</h2>
+                        <div class="well text-center">
+                           <button class="my_popup_open">Open popup</button>				
+                           <div id="my_popup" class="popups">
+                              <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+                              <b>distance:</b> <input type="number" id="distance"></input><br>
+                              <b>store name:</b> <input type="text" id="store_name"></input><br>
+                              <b>travel:</b> 
+                              <select id="travel">
+                                 <option>Car</option>
+                                 <option>Metrobus</option>
+                                 <option>Lightrail</option>
+                                 <option>Walking or biking</option>
+                              </select>
+                              <br>
+                              <input class="materials" id="chkBox1" type="checkbox" value="spandex"> Spandex<br>
+                              <input class="materials" id="chkBox2" type="checkbox" value="cotton"> Cotton <br>
+                              <input class="materials" id="chkBox3" type="checkbox" value="polyester"> Polyester<br>
+                              <button type="button" id="calculate" onclick="calculate()">graph cfootprint!</button>
+                              <div id="cfp"></div>
+                              <button class="my_popup_close">Close</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-9 padding-right">
+                  <div class="features_items">
+                     <!--features_items-->
+                     <h2 class="title text-center">Features Items</h2>
+                     <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                           <div class="single-products">
+                              <div class="productinfo text-center">
+                                 <img src="images/home/product1.jpg" alt="" />
+                                 <h2>$23</h2>
+                                 <p>Special Unicorn Depression Hoodie</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
+                              </div>
+                           </div>
+                           <div class="choose">
+                              <ul class="nav nav-pills nav-justified">
+                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                           <div class="single-products">
+                              <div class="productinfo text-center">
+                                 <img src="images/home/product2.jpg" alt="" />
+                                 <h2>$15</h2>
+                                 <p>Wake me up INSIDESAVEME</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
+                              </div>
+                           </div>
+                           <div class="choose">
+                              <ul class="nav nav-pills nav-justified">
+                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                           <div class="single-products">
+                              <div class="productinfo text-center">
+                                 <img src="images/home/product3.jpg" alt="" />
+                                 <h2>$12</h2>
+                                 <p>Icy Morning Feet Prevention</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
+                              </div>
+                           </div>
+                           <div class="choose">
+                              <ul class="nav nav-pills nav-justified">
+                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                           <div class="single-products">
+                              <div class="productinfo text-center">
+                                 <img src="images/home/product4.jpg" alt="" />
+                                 <h2>$30</h2>
+                                 <p>Reminders that your childhood dreams will only be dreams</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
+                              </div>
+                           </div>
+                           <div class="choose">
+                              <ul class="nav nav-pills nav-justified">
+                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                           <div class="single-products">
+                              <div class="productinfo text-center">
+                                 <img src="images/home/product5.jpg" alt="" />
+                                 <h2>$120</h2>
+                                 <p>Annoying piece of shit whose camera won't work when you need it to</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
+                              </div>
+                           </div>
+                           <div class="choose">
+                              <ul class="nav nav-pills nav-justified">
+                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                           <div class="single-products">
+                              <div class="productinfo text-center">
+                                 <img src="images/home/product6.jpg" alt="" />
+                                 <h2>$32</h2>
+                                 <p>False Hope that Winter will end soon</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
+                              </div>
+                           </div>
+                           <div class="choose">
+                              <ul class="nav nav-pills nav-justified">
+                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--features_items-->
+               </div>
             </div>
-
-            <div class="col-sm-9 padding-right">
-                <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items</h2>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/product1.jpg" alt="" />
-                                    <h2>$23</h2>
-                                    <p>Special Unicorn Depression Hoodie</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/product2.jpg" alt="" />
-                                    <h2>$15</h2>
-                                    <p>Wake me up INSIDESAVEME</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/product3.jpg" alt="" />
-                                    <h2>$12</h2>
-                                    <p>Icy Morning Feet Prevention</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/product4.jpg" alt="" />
-                                    <h2>$30</h2>
-                                    <p>Reminders that your childhood dreams will only be dreams</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/product5.jpg" alt="" />
-                                    <h2>$120</h2>
-                                    <p>Annoying piece of shit whose camera won't work when you need it to</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/home/product6.jpg" alt="" />
-                                    <h2>$32</h2>
-                                    <p>False Hope that Winter will end soon</p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!--features_items-->
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-</section>
-
-</body>
+         </div>
+      </section>
+      <script>
+         $(document).ready(function() {
+         
+           // Initialize the plugin
+           $('#my_popup').popup();
+           $('#shopping_list').popup({openelement: '.cart_open', closeelement: '.shopping_list_close'});
+         });
+           
+      </script>
+   </body>
 </html>

@@ -1,15 +1,4 @@
 window.onload = function () {
-/*	var chart = new CanvasJS.Chart("chartContainer", {
-				data: [{
-					type: "bar",
-					dataPoints: [
-					{y: 0}
-					]
-				}]
-			});
-			chart.render();*/
-
-//http://canvasjs.com/docs/charts/chart-types/html5-bar-chart/
 	var data = [
       {
         type: "bar",
@@ -46,11 +35,9 @@ window.onload = function () {
 		console.log("updating graph");
 		var points = document.getElementById("cfp").innerHTML;
 		var cfp_number = parseInt(document.getElementById("cfp").innerHTML);
-		//chart.data[datasets][data].push(cfp);
-		var store_name = document.getElementById("store_name").innerText;
+		var store_name = document.getElementById("store_name").value;
 		var datapoint = {y: cfp_number, label: store_name}
-		console.log(chart.data["0"].dataPoints.push(datapoint));
-		//console.log(JSON.stringify(chart));
+		chart.data["0"].dataPoints.push(datapoint);
 		chart.render();
 	});
 }

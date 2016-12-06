@@ -2521,3 +2521,39 @@ h2.title {
 }
 
 
+/*************************
+******* Popupoverlay CSS ********
+**************************/
+
+.popups { 
+	background: #FFFFFF; 
+	padding: 30px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 15px;
+	border: solid #FFFFFF;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 80%;
+	width: 60%;
+}
+
+.popups.shopping_list{
+	width: 30%;
+	height: 60%;
+}
+
+#slide_background {
+  transition: all 0.3s 0.3s;
+}
+#slide,
+#slide_wrapper {
+  transition: all 0.3s ease-out;
+}
+#slide {
+  transform: translateX(0) translateY(-40%);
+}
+.popup_visible #slide {
+  transform: translateX(0) translateY(0);
+}
+
