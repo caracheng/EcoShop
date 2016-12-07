@@ -6,10 +6,10 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/font-awesome.min.css" rel="stylesheet">
       <link href="css/prettyPhoto.css" rel="stylesheet">
+      <link href="price-range.css" rel="stylesheet">
       <link href="css/animate.css" rel="stylesheet">
       <link href="css/main.css" rel="stylesheet">
       <link href="css/responsive.css" rel="stylesheet">
-	  
       <script src="js/jquery.js"></script>
       <script src="js/jquery-1.8.2.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
@@ -44,7 +44,8 @@
                            </ul>
                         </div>
                         <div id="shopping_list" class="popups shopping_list">
-                           <b>Shopping List</b>
+                           <b>Shopping List</b><br>
+						   <ul id="slist"></ul>
                            <button class="shopping_list_close">Close</button>
                         </div>
                         <!---Search bar that doesn't work--->
@@ -86,7 +87,24 @@
                         </div>
                      </div>
                      <!--/category-products-->
-
+                     <div class="price-range">
+                        <!--price-range-->
+                        <h2> Price Range </h2>
+                        <div class="well text-center">
+                           <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+                           <b class="pull-left">$ 0</b> <b class="pull-right">$ 100</b>
+                        </div>
+                     </div>
+                     <!--/price-range-->
+                     <div class="price-range">
+                        <!--price-range-->
+                        <h2> Distance </h2>
+                        <div class="well text-center">
+                           <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[5]" id="sl2" ><br />
+                           <b class="pull-left">0mi</b> <b class="pull-right"> 30mi</b>
+                        </div>
+                     </div>
+                     <!--/price-range-->
                      <div class="carbon-graph">
                         <!--carbon graph--->
                         <h2>Carbon Graph</h2>
@@ -94,20 +112,20 @@
                            <button class="my_popup_open">Open popup</button>				
                            <div id="my_popup" class="popups">
                               <div id="chartContainer" style="height: 400px; width: 100%;"></div>
-                              <b>Distance:</b> <input type="number" id="distance"></input><br>
-                              <b>Store Name:</b> <input type="text" id="store_name"></input><br>
-                              <b>Travel Mode:</b> 
+                              <b>distance:</b> <input type="number" id="distance"></input><br>
+                              <b>store name:</b> <input type="text" id="store_name"></input><br>
+                              <b>travel:</b> 
                               <select id="travel">
                                  <option>Car</option>
                                  <option>Metrobus</option>
                                  <option>Lightrail</option>
-                                 <option>Walking or Biking</option>
+                                 <option>Walking or biking</option>
                               </select>
                               <br>
                               <input class="materials" id="chkBox1" type="checkbox" value="spandex"> Spandex<br>
                               <input class="materials" id="chkBox2" type="checkbox" value="cotton"> Cotton <br>
                               <input class="materials" id="chkBox3" type="checkbox" value="polyester"> Polyester<br>
-                              <button type="button" id="calculate" onclick="calculate()"> Graph cFootprint!</button>
+                              <button type="button" id="calculate" onclick="calculate()">graph cfootprint!</button>
                               <div id="cfp"></div>
                               <button class="my_popup_close">Close</button>
                            </div>
@@ -118,7 +136,7 @@
                <div class="col-sm-9 padding-right">
                   <div class="features_items">
                      <!--features_items-->
-                     <h2 class="title text-center">Featured Items</h2>
+                     <h2 class="title text-center">Features Items</h2>
                      <div class="col-sm-4">
                         <div class="product-image-wrapper">
                            <div class="single-products">
@@ -126,6 +144,7 @@
                                  <img src="images/home/product1.jpg" alt="" />
                                  <h2>$70.99</h2>
                                  <p>Record Player</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -142,6 +161,7 @@
                                  <img src="images/home/product2.jpg" alt="" />
                                  <h2>$8.99</h2>
                                  <p>Fuzzy Cat Socks</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -158,6 +178,7 @@
                                  <img src="images/home/product3.jpg" alt="" />
                                  <h2>$10.99</h2>
                                  <p>LLama Beanie</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -174,6 +195,7 @@
                                  <img src="images/home/product4.jpg" alt="" />
                                  <h2>$15.99</h2>
                                  <p>Unicorn Plush Slippers</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -190,6 +212,7 @@
                                  <img src="images/home/product5.jpg" alt="" />
                                  <h2>$129.99</h2>
                                  <p>World Tech Drone</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -206,11 +229,12 @@
                                  <img src="images/home/product6.jpg" alt="" />
                                  <h2>$18.99</h2>
                                  <p>Plush Campside Fire Pillow</p>
+                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('Plush Campside Fire Pillow')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -229,6 +253,11 @@
            $('#shopping_list').popup({openelement: '.cart_open', closeelement: '.shopping_list_close'});
          });
            
-      </script>
+	  function addToCart(item){
+	    var ul = document.getElementById("slist");
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(item));
+  ul.appendChild(li);
+	  }</script>
    </body>
 </html>
