@@ -87,23 +87,6 @@
                         </div>
                      </div>
                      <!--/category-products-->
-                     <div class="price-range">
-                        <!--price-range-->
-                        <h2> Price Range </h2>
-                        <div class="well text-center">
-                           <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                           <b class="pull-left">$ 0</b> <b class="pull-right">$ 100</b>
-                        </div>
-                     </div>
-                     <!--/price-range-->
-                     <div class="price-range">
-                        <!--price-range-->
-                        <h2> Distance </h2>
-                        <div class="well text-center">
-                           <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[5]" id="sl2" ><br />
-                           <b class="pull-left">0mi</b> <b class="pull-right"> 30mi</b>
-                        </div>
-                     </div>
                      <!--/price-range-->
                      <div class="carbon-graph">
                         <!--carbon graph--->
@@ -144,7 +127,6 @@
                                  <img src="images/home/product1.jpg" alt="" />
                                  <h2>$70.99</h2>
                                  <p>Record Player</p>
-                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -161,7 +143,6 @@
                                  <img src="images/home/product2.jpg" alt="" />
                                  <h2>$8.99</h2>
                                  <p>Fuzzy Cat Socks</p>
-                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -178,7 +159,6 @@
                                  <img src="images/home/product3.jpg" alt="" />
                                  <h2>$10.99</h2>
                                  <p>LLama Beanie</p>
-                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -195,7 +175,6 @@
                                  <img src="images/home/product4.jpg" alt="" />
                                  <h2>$15.99</h2>
                                  <p>Unicorn Plush Slippers</p>
-                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -212,7 +191,6 @@
                                  <img src="images/home/product5.jpg" alt="" />
                                  <h2>$129.99</h2>
                                  <p>World Tech Drone</p>
-                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -229,7 +207,6 @@
                                  <img src="images/home/product6.jpg" alt="" />
                                  <h2>$18.99</h2>
                                  <p>Plush Campside Fire Pillow</p>
-                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>View More</a>
                               </div>
                            </div>
                            <div class="choose">
@@ -254,10 +231,11 @@
          });
            
 	  function addToCart(item){
-	    var ul = document.getElementById("slist");
-  var li = document.createElement("li");
-  li.appendChild(document.createTextNode(item));
-  ul.appendChild(li);
-	  }</script>
+		var ul = document.getElementById("slist");
+		var li = document.createElement("li");
+		li.appendChild(document.createTextNode(item));
+		ul.appendChild(li);
+		  }
+	  </script>
    </body>
 </html>
