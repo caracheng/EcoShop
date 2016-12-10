@@ -45,7 +45,10 @@
                         </div>
                         <div id="shopping_list" class="popups shopping_list">
                            <b>Shopping List</b><br>
-						   <ul id="slist"></ul>
+						   <table id="slist">
+								<tr></tr>
+						   </table><br>
+						   <b>Shopping List Total: <id= "cart_total"></b><br>
                            <button class="shopping_list_close">Close</button>
                         </div>
                         <!---Search bar that doesn't work--->
@@ -195,7 +198,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('World Tech Drone', 'Hi', '129.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -211,7 +214,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li onclick="addToCart('Plush Campside Fire Pillow')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('Plush Campside Fire Pillow', 'Hi', '18.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -230,12 +233,50 @@
            $('#shopping_list').popup({openelement: '.cart_open', closeelement: '.shopping_list_close'});
          });
            
-	  function addToCart(item){
-		var ul = document.getElementById("slist");
-		var li = document.createElement("li");
-		li.appendChild(document.createTextNode(item));
-		ul.appendChild(li);
-		  }
+	  //function addToCart(image, item, price){
+		//var ul = document.getElementById("slist");
+		//var li = document.createElement("li");
+		//li.appendChild(document.createTextNode(item));
+		//ul.appendChild(li);
+		//  }
+		  
+		var shoppingCart = [];
+		
+		function displayShoppingCart(){
+			var orderedProductsTblBody=document.getElementById("slist");
+			//ensure we delete all previously added rows from ordered products table
+			while(orderedProductsTblBody.rows.length>0) {
+				orderedProductsTblBody.deleteRow(0);
+			}
+			var cart_total_price=0;				//variable to hold total price of shopping cart
+			
+			for(var product in shoppingCart){				//iterate over array of objects    
+				var row=orderedProductsTblBody.insertRow();		//add new row  
+				var cellName = row.insertCell(0);				//create three cells for product properties 
+				var cellDescription = row.insertCell(1);
+				var cellPrice = row.insertCell(2);
+				cellPrice.align="right";
+				//fill cells with values from current product object of our array
+				cellName.innerHTML = shoppingCart[product].Name;
+				cellDescription.innerHTML = shoppingCart[product].Description;
+				cellPrice.innerHTML = shoppingCart[product].Price;
+				cart_total_price+=shoppingCart[product].Price;
+			}
+			//fill total cost of our shopping cart 
+			document.getElementById("cart_total").innerHTML= cart_total_price;
+		}
+		function addToCart(name,description,price){
+		   //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
+		   var singleProduct = {};
+		   //Fill the product object with data
+		   singleProduct.Name=name;
+		   singleProduct.Description=description;
+		   singleProduct.Price=price;
+		   //Add newly created product to our shopping cart 
+		   shoppingCart.push(singleProduct);
+		   //call display function to show on screen
+		   displayShoppingCart();
+		}  
 	  </script>
    </body>
 </html>
