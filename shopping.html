@@ -44,11 +44,11 @@
                            </ul>
                         </div>
                         <div id="shopping_list" class="popups shopping_list">
-                           <b>Shopping List</b><br>
+                           <b>Shopping List</b><br><br>
 						   <table id="slist">
 								<tr></tr>
 						   </table><br>
-						   <b>Shopping List Total: <id= "cart_total"></b><br>
+						   <b>Shopping List Total:  </b> <p id="cart_total"> </p><br>
                            <button class="shopping_list_close">Close</button>
                         </div>
                         <!---Search bar that doesn't work--->
@@ -134,7 +134,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('images/home/product1.jpg','Record Player', '70.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -150,7 +150,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('images/home/product2.jpg','Fuzzy Cat Socks', '8.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -161,12 +161,12 @@
                               <div class="productinfo text-center">
                                  <img src="images/home/product3.jpg" alt="" />
                                  <h2>$10.99</h2>
-                                 <p>LLama Beanie</p>
+                                 <p>Llama Beanie</p>
                               </div>
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('images/home/product3.jpg','Llama Beanie', '10.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -182,7 +182,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('images/home/product4.jpg','Unicorn Plush Slippers', '15.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -198,7 +198,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li onclick="addToCart('World Tech Drone', 'Hi', '129.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('images/home/product5.jpg', 'World Tech Drone', '129.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -214,7 +214,7 @@
                            </div>
                            <div class="choose">
                               <ul class="nav nav-pills nav-justified">
-                                 <li onclick="addToCart('Plush Campside Fire Pillow', 'Hi', '18.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
+                                 <li onclick="addToCart('images/home/product6.jpg','Plush Campside Fire Pillow', '18.99')"><a href="#"><i class="fa fa-shopping-cart"></i>Add to Shopping List</a></li>
                               </ul>
                            </div>
                         </div>
@@ -251,27 +251,28 @@
 			var cart_total_price=0;				//variable to hold total price of shopping cart
 			
 			for(var product in shoppingCart){				//iterate over array of objects    
-				var row=orderedProductsTblBody.insertRow();		//add new row  
-				var cellName = row.insertCell(0);				//create three cells for product properties 
-				var cellDescription = row.insertCell(1);
+				var row=orderedProductsTblBody.insertRow();		//add new row
+				var cellPicture = row.insertCell(0); //create three cells for product properties
+				var cellName = row.insertCell(1);
 				var cellPrice = row.insertCell(2);
 				cellPrice.align="right";
 				//fill cells with values from current product object of our array
 				cellName.innerHTML = shoppingCart[product].Name;
-				cellDescription.innerHTML = shoppingCart[product].Description;
+				cellPicture.innerHTML = shoppingCart[product].Picture;
 				cellPrice.innerHTML = shoppingCart[product].Price;
 				cart_total_price+=shoppingCart[product].Price;
 			}
 			//fill total cost of our shopping cart 
-			document.getElementById("cart_total").innerHTML= cart_total_price;
+			document.getElementById("cart_total").innerHTML= cart_total_price.toFixed(2);
 		}
-		function addToCart(name,description,price){
+		function addToCart(picture,name,price){
 		   //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
 		   var singleProduct = {};
 		   //Fill the product object with data
 		   singleProduct.Name=name;
-		   singleProduct.Description=description;
-		   singleProduct.Price=price;
+		   var imgSrc = "<img src=" + picture + " width='30' height='30' >"
+		   singleProduct.Picture=imgSrc;
+		   singleProduct.Price=parseFloat(price);
 		   //Add newly created product to our shopping cart 
 		   shoppingCart.push(singleProduct);
 		   //call display function to show on screen
