@@ -40,7 +40,7 @@
                         <!---Shopping cart--->
                         <div class="shop-menu pull-right">
                            <ul class="nav navbar-nav">
-                              <li><a href="#" id="cart" class="cart_open"><i class="fa fa-shopping-cart"></i> Shopping List <span class="badge">3</span></a></li>
+                              <li><a href="#" id="cart" class="cart_open"><i class="fa fa-shopping-cart"></i> Shopping List <span class="badge" id="total_items">0</span></a></li>
                            </ul>
                         </div>
                         <div id="shopping_list" class="popups shopping_list">
@@ -249,6 +249,7 @@
 				orderedProductsTblBody.deleteRow(0);
 			}
 			var cart_total_price=0;				//variable to hold total price of shopping cart
+			var cart_total_items=0;
 			
 			for(var product in shoppingCart){				//iterate over array of objects    
 				var row=orderedProductsTblBody.insertRow();		//add new row
@@ -261,9 +262,11 @@
 				cellPicture.innerHTML = shoppingCart[product].Picture;
 				cellPrice.innerHTML = shoppingCart[product].Price;
 				cart_total_price+=shoppingCart[product].Price;
+				cart_total_items+=1;
 			}
-			//fill total cost of our shopping cart 
+			//fill total cost of our shopping cart
 			document.getElementById("cart_total").innerHTML= cart_total_price.toFixed(2);
+			document.getElementById("total_items").innerHTML = cart_total_items;
 		}
 		function addToCart(picture,name,price){
 		   //Below we create JavaScript Object that will hold three properties you have mentioned:    Name,Description and Price
