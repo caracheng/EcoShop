@@ -256,6 +256,7 @@
 				var cellPicture = row.insertCell(0); //create three cells for product properties
 				var cellName = row.insertCell(1);
 				var cellPrice = row.insertCell(2);
+				var cellItemTotal = row.insertCell(3)
 				cellPrice.align="right";
 				//fill cells with values from current product object of our array
 				cellName.innerHTML = shoppingCart[product].Name;
@@ -276,7 +277,15 @@
 		   var imgSrc = "<img src=" + picture + " width='30' height='30' >"
 		   singleProduct.Picture=imgSrc;
 		   singleProduct.Price=parseFloat(price);
+		   singleProduct.ItemNum=0;
 		   //Add newly created product to our shopping cart 
+		   for(index in shoppingCart){ 				//grab object from shopping cart
+				product = shoppingCart[index];
+				productName = product.Name;					//grab name of product
+				if (productName === name){					// if item already in cart
+					singleProduct.ItemNum += 1;				//increment
+				}
+			}
 		   shoppingCart.push(singleProduct);
 		   //call display function to show on screen
 		   displayShoppingCart();
