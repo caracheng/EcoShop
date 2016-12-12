@@ -252,7 +252,6 @@
 			var cart_total_items=0;
 			
 			for(var product in shoppingCart){				//iterate over array of objects    
-				console.log(shoppingCart[product]);
 				if (shoppingCart[product].ItemNum === 1){
 					var row=orderedProductsTblBody.insertRow();		//add new row
 					var cellPicture = row.insertCell(0); //create  cells for product properties
