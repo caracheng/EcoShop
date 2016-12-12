@@ -252,16 +252,22 @@
 			var cart_total_items=0;
 			
 			for(var product in shoppingCart){				//iterate over array of objects    
-				var row=orderedProductsTblBody.insertRow();		//add new row
-				var cellPicture = row.insertCell(0); //create three cells for product properties
-				var cellName = row.insertCell(1);
-				var cellPrice = row.insertCell(2);
-				var cellItemTotal = row.insertCell(3)
-				cellPrice.align="right";
-				//fill cells with values from current product object of our array
-				cellName.innerHTML = shoppingCart[product].Name;
-				cellPicture.innerHTML = shoppingCart[product].Picture;
-				cellPrice.innerHTML = shoppingCart[product].Price;
+				console.log(shoppingCart[product]);
+				if (shoppingCart[product].ItemNum === 1){
+					var row=orderedProductsTblBody.insertRow();		//add new row
+					var cellPicture = row.insertCell(0); //create  cells for product properties
+					var cellName = row.insertCell(1);
+					var cellPrice = row.insertCell(2);
+					var cellItemTotal = row.insertCell(3);
+					cellPrice.align="right";
+					//fill cells with values from current product object of our array
+					cellName.innerHTML = shoppingCart[product].Name;
+					cellPicture.innerHTML = shoppingCart[product].Picture;
+					cellPrice.innerHTML = shoppingCart[product].Price;
+				}
+				else{
+					cellItemTotal.innerHTML = shoppingCart[product].ItemNum;
+				}
 				cart_total_price+=shoppingCart[product].Price;
 				cart_total_items+=1;
 			}
